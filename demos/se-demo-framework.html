@@ -3,223 +3,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Solution Engineering Demo</title>
+  <title>Interactive Solution Demo – SE Framework</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
   <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
+    /* Tiny extras for a “portfolio-polished” feel */
+    .card {
+      background: white;
+      border: 1px solid rgb(226 232 240);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .impact-list-item {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-    }
-
-    .impact-list-item::before {
-      content: "✓";
-      color: #16a34a;
+    .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgb(100 116 139);
       font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 1.6;
-      flex-shrink: 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
   </style>
 </head>
 
-<body class="antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black">SE</div>
+        <div>
+          <div class="font-extrabold text-slate-900 leading-tight">Interactive Solution Demo</div>
+          <div class="text-xs text-slate-500">A lightweight, repeatable demo framework (inputs → story → ROI → next steps)</div>
+        </div>
+      </div>
 
-  <!-- HEADER -->
-  <section class="py-20 bg-gradient-to-br from-slate-50 to-slate-200 text-center px-4">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900">
-        Interactive Solution Engineering Demo
-      </h1>
-
-      <p class="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-        This interactive framework demonstrates how I translate customer discovery
-        into structured solution design, technical storytelling, and measurable business outcomes.
-      </p>
-
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a
-          href="../index.html"
-          class="bg-slate-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-slate-800 transition shadow-lg"
-        >
+      <div class="flex items-center gap-2">
+        <a href="../index.html"
+           class="text-sm font-semibold px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-100 transition">
           ← Back to Portfolio
         </a>
-
-        <a
-          href="curewave-full-demo.html"
-          class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg"
-        >
-          View Full End-to-End Case Study →
+        <a href="./curewave-full-demo.html"
+           class="text-sm font-semibold px-3 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+          View Full Case Study →
         </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- DEMO CONTENT -->
-  <section class="py-20 bg-white px-4">
-    <div class="max-w-5xl mx-auto">
-
-      <!-- SECTION: FRAMEWORK -->
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 mb-16">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">
-          Demo Framework Overview
-        </h2>
-
-        <p class="text-slate-600 mb-6">
-          This framework mirrors how I run real customer demos:
-          discovery-led, outcome-driven, and structured to guide executive decision-making.
-        </p>
-
-        <ul class="space-y-3 text-slate-700">
-          <li class="impact-list-item">
-            Align on customer pain, constraints, and success criteria
-          </li>
-          <li class="impact-list-item">
-            Map each solution component directly to business value
-          </li>
-          <li class="impact-list-item">
-            Maintain narrative flow instead of feature dumping
-          </li>
-          <li class="impact-list-item">
-            Create a clear path to next steps and implementation
-          </li>
-        </ul>
-      </div>
-
-      <!-- SECTION: MULTI-AI WORKFLOW TOOL -->
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">
-          Multi-AI Workflow Orchestration Tool
-        </h2>
-
-        <p class="text-slate-600 mb-8">
-          This interactive tool demonstrates how I orchestrate multiple AI models
-          as specialized collaborators—capturing intent, refining logic, validating facts,
-          and synthesizing outputs into a final solution.
-        </p>
-
-        <!-- PROJECT INFO -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <label class="block text-sm font-medium mb-1">Project Title</label>
-            <input
-              type="text"
-              class="w-full p-2 border border-slate-300 rounded-md"
-              placeholder="e.g., Enterprise GTM Transformation"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1">Date</label>
-            <input
-              type="date"
-              id="project-date"
-              class="w-full p-2 border border-slate-300 rounded-md"
-            />
-          </div>
-
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Primary Objective</label>
-            <textarea
-              class="w-full p-2 border border-slate-300 rounded-md"
-              placeholder="What does success look like for the customer?"
-            ></textarea>
-          </div>
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
+    <div class="card p-7 md:p-10 bg-gradient-to-br from-white to-slate-50">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div class="max-w-2xl">
+          <div class="label mb-2">How to use</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Fill in the customer context → generate a clean demo narrative.
+          </h1>
+          <p class="mt-3 text-slate-600">
+            This is a reusable structure: discovery recap, problem→feature mapping, value/ROI framing,
+            and a crisp close. It’s meant to feel “consultative” instead of “feature tour.”
+          </p>
         </div>
 
-        <!-- WORKFLOW LOG -->
-        <h3 class="text-xl font-semibold text-slate-800 mb-4">
-          Workflow Log
-        </h3>
-
-        <div id="workflow-log" class="space-y-6"></div>
-
-        <div class="text-center mt-8">
-          <button
-            id="add-step-btn"
-            class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-md"
-          >
-            + Add Workflow Step
-          </button>
+        <div class="flex flex-col gap-2">
+          <div class="text-xs text-slate-500">Page location</div>
+          <div class="mono text-xs bg-slate-900 text-slate-100 rounded-xl px-3 py-2">
+            /demos/se-demo-framework.html
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCRIPT -->
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Inputs -->
+    <section class="card p-6 md:p-7">
+      <div class="flex items-center justify-between gap-3">
+        <h2 class="text-xl font-extrabold text-slate-900">1) Inputs</h2>
+        <button id="resetBtn"
+          class="text-sm font-semibold px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-100 transition">
+          Reset
+        </button>
+      </div>
+
+      <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <div class="label mb-1">Customer</div>
+          <input id="customer" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., Curewave Health" />
+        </div>
+
+        <div>
+          <div class="label mb-1">Industry</div>
+          <input id="industry" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., Healthcare / SaaS" />
+        </div>
+
+        <div>
+          <div class="label mb-1">Primary stakeholder</div>
+          <input id="stakeholder" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., VP Ops" />
+        </div>
+
+        <div>
+          <div class="label mb-1">Decision window</div>
+          <input id="timeline" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., 30–60 days" />
+        </div>
+
+        <div class="md:col-span-2">
+          <div class="label mb-1">Top pain points (one per line)</div>
+          <textarea id="pains" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 min-h-[120px]"
+            placeholder="e.g.,\nNo real-time visibility\nManual handoffs break\nStakeholders ask for status constantly"></textarea>
+        </div>
+
+        <div class="md:col-span-2">
+          <div class="label mb-1">Success metrics (one per line)</div>
+          <textarea id="metrics" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 min-h-[90px]"
+            placeholder="e.g.,\nReduce status meetings from 2 hours → 30 min\nCut manual updates by 60%\nIncrease delivery predictability"></textarea>
+        </div>
+      </div>
+
+      <hr class="my-6 border-slate-200" />
+
+      <h3 class="text-lg font-extrabold text-slate-900">ROI quick pass (optional)</h3>
+      <p class="text-sm text-slate-600 mt-1">This is intentionally simple: time saved × blended hourly cost.</p>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <div class="label mb-1">People impacted</div>
+          <input id="people" type="number" min="0" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., 25" />
+        </div>
+        <div>
+          <div class="label mb-1">Hours saved per week</div>
+          <input id="hours" type="number" min="0" step="0.5" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., 2" />
+        </div>
+        <div>
+          <div class="label mb-1">Blended $/hour</div>
+          <input id="rate" type="number" min="0" class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="e.g., 80" />
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <button id="generateBtn"
+          class="px-4 py-2 rounded-xl bg-blue-600 text-white font-extrabold hover:bg-blue-700 transition">
+          Generate Demo Narrative
+        </button>
+
+        <button id="copyBtn"
+          class="px-4 py-2 rounded-xl border border-slate-200 font-semibold hover:bg-slate-100 transition">
+          Copy Narrative
+        </button>
+
+        <button id="downloadBtn"
+          class="px-4 py-2 rounded-xl border border-slate-200 font-semibold hover:bg-slate-100 transition">
+          Download JSON
+        </button>
+
+        <span id="toast" class="text-sm text-slate-500"></span>
+      </div>
+    </section>
+
+    <!-- Outputs -->
+    <section class="card p-6 md:p-7">
+      <h2 class="text-xl font-extrabold text-slate-900">2) Output</h2>
+      <p class="text-sm text-slate-600 mt-1">
+        This is the talk track you can use live, or paste into an email recap. Keep it crisp.
+      </p>
+
+      <div class="mt-5">
+        <div class="label mb-2">Demo narrative</div>
+        <textarea id="output"
+          class="w-full rounded-xl border border-slate-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 min-h-[520px] mono"
+          placeholder="Click “Generate Demo Narrative” to populate this."></textarea>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl bg-slate-100 border border-slate-200">
+          <div class="label">Checklist</div>
+          <ul class="mt-2 text-sm text-slate-700 space-y-1">
+            <li>• Confirm stakeholders + roles</li>
+            <li>• Recap pains in their language</li>
+            <li>• Show 3–5 flows, not 30 features</li>
+            <li>• Tie every click to a metric</li>
+            <li>• Close with a low-risk next step</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl bg-blue-50 border border-blue-100">
+          <div class="label">Closing line</div>
+          <p class="mt-2 text-sm text-slate-700">
+            “If this matches what you need, the next step is a short technical validation with your team so we can confirm
+            integration, data flows, and timeline. Sound fair?”
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const addStepBtn = document.getElementById('add-step-btn');
-      const workflowLog = document.getElementById('workflow-log');
-      const dateInput = document.getElementById('project-date');
+    const el = (id) => document.getElementById(id);
 
-      let stepCounter = 0;
+    const fields = {
+      customer: el("customer"),
+      industry: el("industry"),
+      stakeholder: el("stakeholder"),
+      timeline: el("timeline"),
+      pains: el("pains"),
+      metrics: el("metrics"),
+      people: el("people"),
+      hours: el("hours"),
+      rate: el("rate"),
+      output: el("output"),
+      toast: el("toast"),
+    };
 
-      if (dateInput) {
-        dateInput.valueAsDate = new Date();
-      }
+    function lines(text) {
+      return (text || "")
+        .split("\n")
+        .map(s => s.trim())
+        .filter(Boolean);
+    }
 
-      function addStep() {
-        stepCounter++;
-        const stepId = `step-${stepCounter}`;
+    function formatCurrency(n) {
+      if (!isFinite(n)) return "$0";
+      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+    }
 
-        const step = document.createElement('div');
-        step.className = 'bg-white border border-slate-200 rounded-lg p-6';
-        step.id = stepId;
+    function computeROI() {
+      const people = Number(fields.people.value || 0);
+      const hours = Number(fields.hours.value || 0);
+      const rate = Number(fields.rate.value || 0);
 
-        step.innerHTML = `
-          <div class="flex justify-between items-center mb-4 border-b pb-2">
-            <h4 class="font-semibold text-slate-800">Step ${stepCounter}</h4>
-            <button class="text-red-600 font-semibold text-sm" data-remove="${stepId}">
-              Remove
-            </button>
-          </div>
+      const weekly = people * hours * rate;
+      const annual = weekly * 52;
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <input class="p-2 border rounded" placeholder="From (e.g., Human)" />
-            <input class="p-2 border rounded" placeholder="To (e.g., ChatGPT, Claude)" />
-          </div>
+      return { weekly, annual, people, hours, rate };
+    }
 
-          <textarea class="w-full p-2 border rounded mb-3" placeholder="Prompt"></textarea>
-          <textarea class="w-full p-2 border rounded mb-3" placeholder="Response"></textarea>
-          <textarea class="w-full p-2 border rounded" placeholder="Analysis & Next Steps"></textarea>
-        `;
+    function generateNarrative() {
+      const customer = fields.customer.value.trim() || "[Customer]";
+      const industry = fields.industry.value.trim() || "[Industry]";
+      const stakeholder = fields.stakeholder.value.trim() || "[Primary Stakeholder]";
+      const timeline = fields.timeline.value.trim() || "[Timeline]";
 
-        workflowLog.appendChild(step);
-      }
+      const pains = lines(fields.pains.value);
+      const metrics = lines(fields.metrics.value);
 
-      addStepBtn.addEventListener('click', addStep);
-      addStep();
+      const roi = computeROI();
 
-      workflowLog.addEventListener('click', e => {
-        if (e.target.dataset.remove) {
-          document.getElementById(e.target.dataset.remove)?.remove();
-        }
+      const painsBlock = pains.length
+        ? pains.map((p, i) => `  ${i+1}. ${p}`).join("\n")
+        : "  1. [Pain point]\n  2. [Pain point]\n  3. [Pain point]";
+
+      const metricsBlock = metrics.length
+        ? metrics.map(m => `  • ${m}`).join("\n")
+        : "  • [Metric]\n  • [Metric]";
+
+      const roiBlock = (roi.people && roi.hours && roi.rate)
+        ? `ROI quick pass (time-saved framing):
+  • People impacted: ${roi.people}
+  • Hours saved/week: ${roi.hours}
+  • Blended $/hour: ${formatCurrency(roi.rate)}
+  • Weekly value: ${formatCurrency(roi.weekly)}
+  • Annualized value: ${formatCurrency(roi.annual)}`
+        : `ROI quick pass (optional):
+  • If we save time across the team, we can quantify value quickly:
+    people impacted × hours saved/week × blended $/hour → weekly + annualized impact`;
+
+      const narrative =
+`DEMO OPEN (30 seconds)
+Thanks for the time. I’m going to run this in a consultative format — I’ll recap what I heard, show the 3–5 flows that directly address it, and then align on outcomes + next steps.
+
+CONTEXT
+Customer: ${customer}
+Industry: ${industry}
+Primary stakeholder: ${stakeholder}
+Decision window: ${timeline}
+
+DISCOVERY RECAP (2 minutes)
+Here’s what I heard as the core challenges:
+${painsBlock}
+
+SUCCESS CRITERIA (30 seconds)
+If we do this right, we should see:
+${metricsBlock}
+
+AGENDA (set expectations)
+1) Show the end-to-end workflow that maps pain → solution
+2) Highlight how teams adopt this (governance + change)
+3) Confirm integration reality (what connects to what)
+4) Align on next step (technical validation + pilot)
+
+DEMO STORY (the “3 flows” rule)
+Flow 1 — Visibility / single source of truth
+- Show: where leadership sees status without meetings
+- Tie to: reduced status churn + earlier risk detection
+
+Flow 2 — Automation / handoffs
+- Show: how inputs trigger the next step automatically
+- Tie to: less manual work, fewer dropped balls
+
+Flow 3 — Exec-ready outputs
+- Show: the artifact you ship (dashboard, report, recap)
+- Tie to: decisions happen faster with less noise
+
+VALUE / ROI FRAME (simple + credible)
+${roiBlock}
+
+OBJECTIONS (preempt)
+- “Is this customizable?” → Yes, but we standardize the backbone so it stays maintainable.
+- “What’s the lift?” → We pilot narrowly, prove value, then expand.
+- “Will people adopt it?” → Adoption is designed (templates, training, champions, feedback loops).
+
+CLOSE (clear next step)
+If what you saw matches the outcomes you’re after, the next step is a short technical validation with the right stakeholders. We confirm integration details, data flow, timeline, and pick a pilot scope. Sound fair?`;
+
+      fields.output.value = narrative;
+      toast("Generated.");
+    }
+
+    function toast(msg) {
+      fields.toast.textContent = msg;
+      setTimeout(() => (fields.toast.textContent = ""), 1500);
+    }
+
+    function copyOutput() {
+      const text = fields.output.value.trim();
+      if (!text) return toast("Nothing to copy yet.");
+      navigator.clipboard.writeText(text).then(() => toast("Copied."));
+    }
+
+    function downloadJSON() {
+      const data = {
+        customer: fields.customer.value.trim(),
+        industry: fields.industry.value.trim(),
+        stakeholder: fields.stakeholder.value.trim(),
+        timeline: fields.timeline.value.trim(),
+        pains: lines(fields.pains.value),
+        success_metrics: lines(fields.metrics.value),
+        roi: computeROI(),
+        generated_at: new Date().toISOString(),
+      };
+
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "se-demo-framework-inputs.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+      toast("Downloaded JSON.");
+    }
+
+    function resetAll() {
+      Object.values(fields).forEach(f => {
+        if (!f || !("value" in f)) return;
+        f.value = "";
       });
-    });
-  </script>
+      fields.output.value = "";
+      toast("Reset.");
+    }
 
+    el("generateBtn").addEventListener("click", generateNarrative);
+    el("copyBtn").addEventListener("click", copyOutput);
+    el("downloadBtn").addEventListener("click", downloadJSON);
+    el("resetBtn").addEventListener("click", resetAll);
+  </script>
 </body>
 </html>
